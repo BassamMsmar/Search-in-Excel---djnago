@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container my-2">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">receipt</th>
+          <th scope="col">driver</th>
+          <th scope="col">fare</th>
+          <th scope="col">destination</th>
+          <th scope="col">company</th>
+          <th scope="col">shipment number</th>
+          <th scope="col">note</th>
+          <th scope="col">invoice number</th>
+          <th scope="col">date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for shipment in shipments %}
+          <tr>
+            <th scope="row">1</th>
+            <td>{{shipment.receipt_number}}</td>
+            <td>{{shipment.driver_name}}</td>
+            <td>{{shipment.fare}}</td>
+            <td>{{shipment.destination}}</td>
+            <td>{{shipment.company}}</td>
+            <td>{{shipment.shipment_number}}</td>
+            <td>{{shipment.note}}</td>
+            <td>{{shipment.invoice_number}}</td>
+            <td>{{shipment.date}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container">
+    <div class="my-2">
+      <form method="post" enctype="multipart/form-data" class="d-flex">
+        {% csrf_token %}
+        <div class="mr-2">{{ context.form.file }}</div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+    </div>
+
+    <ul class="list-group">
+      <div class="container my-2">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">name</th>
+              <th scope="col">creation_time</th>
+              <th scope="col">modification_time</th>
+              <th scope="col">sheet_names</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for file in context.files %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ file }}</td>
+                <td>{{ file.creation_time }}</td>
+                <td>{{ file.modification_time }}</td>
+                <td>{{ file.sheet_names }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </ul>
+  </div>
+{% endblock %}
