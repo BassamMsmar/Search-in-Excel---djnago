@@ -21,6 +21,8 @@ class ExcelFile(models.Model):
     creation_time = models.DateTimeField(blank=True, null=True)
     modification_time = models.DateTimeField(blank=True, null=True)
     sheet_names = models.TextField(blank=True, null=True) 
+    processing_date = models.DateTimeField(auto_now_add=True ,null=True, blank=True)
+    
     
 
 

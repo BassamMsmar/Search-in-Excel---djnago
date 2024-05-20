@@ -19,18 +19,6 @@ def inoices_list(request):
             forms = form.save(commit=False)
             forms.sheet_names = "bassam"
             forms.save()
-            # excel_file = form.save(commit=False)
-            # file_path = excel_file.file.path
-            # wb = load_workbook(filename=file_path, read_only=True)
-            # properties = wb.properties
-            # excel_file.created_at = properties.created
-            # excel_file.modified_at = properties.modified
-
-            # sheet_names = wb.sheetnames
-            # excel_file.sheet_names = ", ".join(sheet_names)
-
-
-            # excel_file.save()
             return redirect('inoices_list')
     else:
         form = ExcelFileForm()

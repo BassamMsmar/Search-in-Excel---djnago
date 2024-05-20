@@ -16,9 +16,10 @@
             <tr>
               <th scope="col">No</th>
               <th scope="col">name</th>
-              <th scope="col">creation_time</th>
-              <th scope="col">modification_time</th>
-              <th scope="col">sheet_names</th>
+              <th scope="col">creation time</th>
+              <th scope="col">modification time</th>
+              <th scope="col">sheet names</th>
+              <th scope="col">processing date</th>
             </tr>
           </thead>
           <tbody>
@@ -26,9 +27,10 @@
               <tr>
                 <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ file }}</td>
-                <td>{{ file.creation_time }}</td>
-                <td>{{ file.modification_time }}</td>
+                <td>{{ file.creation_time|date:"d/m/Y" }}</td>
+                <td>{{ file.modification_time|date:"d/m/Y" }}</td>
                 <td>{{ file.sheet_names }}</td>
+                <td>{{ processing_date|date:"d/m/Y" }}</td>
               </tr>
             {% endfor %}
           </tbody>
